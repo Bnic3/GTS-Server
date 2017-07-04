@@ -264,6 +264,10 @@ jstransformer@0.0.2:
     is-promise "^2.0.0"
     promise "^6.0.1"
 
+lodash@^4.16.1:
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
@@ -380,6 +384,12 @@ raw-body@~2.1.2:
     bytes "2.4.0"
     iconv-lite "0.4.13"
     unpipe "1.0.0"
+
+route-bootloader@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/route-bootloader/-/route-bootloader-1.0.3.tgz#7adf6cf0273685a119d2dc59119e00f200e8e85c"
+  dependencies:
+    lodash "^4.16.1"
 
 send@0.13.1:
   version "0.13.1"
