@@ -5,7 +5,7 @@
 var rekuire = require("rekuire"),
     mongoose = rekuire("database"),
     crypto = require("crypto"),
-    uuid = require('node-uuid'),
+
     autoIncrement = require('mongoose-auto-increment');
 Schema = mongoose.Schema;
 

@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var loader = require('route-bootloader');
-loader(app);
+
 
 /*var routes = require('./routes/index');
 var users = require('./routes/users');*/
@@ -28,6 +28,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+loader(app);
 /*app.use('/', routes);
 app.use('/users', users);*/
 
