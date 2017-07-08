@@ -4,6 +4,7 @@
 var express = require('express');
 var rek = require("rekuire");
 var _ = require("lodash"),
+    moment = require("moment"),
     jwt = require('jsonwebtoken');
 
 var router = express.Router();
@@ -29,31 +30,52 @@ function createEstate(req,res){
 
     var est = new Estate();
         est = _.merge(est, input);
+    /*var mtime= moment().add(3,"days").calendar();
+    var normal= moment().add(3,"days").toDate();
+    var convert = moment(normal)*/
 
-        console.log(req.body.contact);
-        est.sub_token= jwt.sign(input,"supersecret", {
-            expiresIn: "1m" // expires in 1 minute
+    est.expiration_date= moment().add(30, "days").toDate();
+    est.sub_token= jwt.sign(input,"supersecret", {
+            expiresIn: "1 days" // expires in 3 minute
         });
 
+    est.save((err,doc)=>{
+        if (err) res.json({error: true, message: "there was an error saving estate on the database"});
+        if (!doc) res.json({error: true, message: "Could not save estate on the database"});
 
-    jwt.verify(est.sub_token, "supersecret", function(err, decoded) {
+        return res.json({data:doc, error:false, message:"Estate has been created"});
+    });
+
+    /*jwt.verify(est.sub_token, "supersecret", function(err, decoded) {
      if (err) {
      return res.json({ success: false, message: 'Failed to authenticate token.' });
      } else {
      // if everything is good, save to request for use in other routes
-     /* req.decoded = decoded;
-     next();*/
+     /!* req.decoded = decoded;
+     next();*!/
 
-     res.json({
-     success: true,
-     message: 'Enjoy your token!',
-     token: est.sub_token,
-     decoded:decoded
-     });
+         /!*res.json({
+             success: true,
+             message: 'Enjoy your token!',
+             token: est.sub_token,
+             decoded:decoded,
+             time:mtime,
+             normal:normal,
+             convert:convert
+         });*!/
      }
-     });
+     });*/
 
 
+    /*res.json({
+        success: true,
+        message: 'Enjoy your token!',
+        token: est.sub_token,
+        decoded:decoded,
+        time:mtime,
+        normal:normal,
+        convert:convert
+    });*/
 
 
 
