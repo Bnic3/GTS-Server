@@ -48,40 +48,6 @@ function createEstate(req,res){
         return res.json({data:doc, error:false, message:"Estate has been created"});
     });
 
-    /*jwt.verify(est.sub_token, "supersecret", function(err, decoded) {
-     if (err) {
-     return res.json({ success: false, message: 'Failed to authenticate token.' });
-     } else {
-     // if everything is good, save to request for use in other routes
-     /!* req.decoded = decoded;
-     next();*!/
-
-         /!*res.json({
-             success: true,
-             message: 'Enjoy your token!',
-             token: est.sub_token,
-             decoded:decoded,
-             time:mtime,
-             normal:normal,
-             convert:convert
-         });*!/
-     }
-     });*/
-
-
-    /*res.json({
-        success: true,
-        message: 'Enjoy your token!',
-        token: est.sub_token,
-        decoded:decoded,
-        time:mtime,
-        normal:normal,
-        convert:convert
-    });*/
-
-
-
-
 }
 
 module.exports= router;

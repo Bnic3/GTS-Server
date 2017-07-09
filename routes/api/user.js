@@ -5,7 +5,7 @@ var express = require('express');
 var rek = require("rekuire");
 var _ = require("lodash"),
     moment = require("moment"),
-    Utility= rek("utility")
+    Utility= rek("utility")(),
     jwt = require('jsonwebtoken');
 
 var router = express.Router();
@@ -13,7 +13,7 @@ var router = express.Router();
 //DB Object
 var DB = rek('database');
 
-router.route('/api/estates')
+router.route('/api/user')
     .post(createUser);
 
 router.post("/testing",(req,res)=>{
@@ -29,6 +29,7 @@ function createUser(req,res){
         token: String,
         r_name: String,
         status: String,
+        t_exp
         daily_max: Number,*/
 
     var input = req.body;
@@ -37,6 +38,16 @@ function createUser(req,res){
     var user = new User();
     user = _.merge(user, input);
     user.token= Utility.tokenizer();
+    user.t_exp= moment().add(20,'m').toDate();
+    if (req.body.status){user.status=req.body.status}
+
+    user.save((err,doc)=>{
+        if (err) res.json({error: true, message: "there was an error saving user on the database"});
+        if (!doc) res.json({error: true, message: "Could not save estate on the database"});
+
+
+        return res.json({data:doc, success:true, message:"User has been created"});
+    });
 
 
 }

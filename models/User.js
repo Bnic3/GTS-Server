@@ -13,9 +13,10 @@ var UserSchema = new Schema({
     phone: String,
     token: String,
     r_name: String,
-    status: String,
-    daily_max: Number,
-    verified: Boolean,
+    status: {type:String,default:"user"},
+    daily_max:{type:Number,default:20},
+    verified:{type:Boolean,default: false},
+    t_exp: {type:Date},
     last_login: {type:Date,default: Date.now}
 
 });
