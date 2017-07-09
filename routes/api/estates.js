@@ -39,9 +39,11 @@ function createEstate(req,res){
             expiresIn: "1 days" // expires in 3 minute
         });
 
+
     est.save((err,doc)=>{
         if (err) res.json({error: true, message: "there was an error saving estate on the database"});
         if (!doc) res.json({error: true, message: "Could not save estate on the database"});
+        //Todo: create the user as Admin
 
         return res.json({data:doc, error:false, message:"Estate has been created"});
     });

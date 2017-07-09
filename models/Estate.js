@@ -15,6 +15,7 @@ var EstateSchema = new Schema({
     e_name: String,
     sub_token: String,
     contact: String,
+    license: {type:Number, default: 20},
     last_sub: {type:Date, default: Date.now },
     expiration_date:{type:Date}
 

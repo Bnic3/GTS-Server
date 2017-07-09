@@ -15,7 +15,8 @@ var UserSchema = new Schema({
     r_name: String,
     status: String,
     daily_max: Number,
-    last_login: {type:Date}
+    verified: Boolean,
+    last_login: {type:Date,default: Date.now}
 
 });
 
