@@ -16,10 +16,7 @@ var DB = rek('database');
 router.route('/api/user')
     .post(createUser);
 
-router.post("/testing",(req,res)=>{
-    console.log(req.body.contact);
-    res.send("post is working")
-});
+
 
 
 
@@ -46,7 +43,7 @@ function createUser(req,res){
         if (!doc) res.json({error: true, message: "Could not save estate on the database"});
 
 
-        return res.json({data:doc, success:true, message:"User has been created"});
+        return res.json({success:true, message:"User has been created"});
     });
 
 

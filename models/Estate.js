@@ -15,6 +15,13 @@ var EstateSchema = new Schema({
     e_name: String,
     sub_token: String,
     contact: String,
+    contact_email:{
+        type: String,
+        required: true,
+        trim: true,
+        lowerCase:true,
+        match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    },
     license: {type:Number, default: 20},
     last_sub: {type:Date, default: Date.now },
     expiration_date:{type:Date}
