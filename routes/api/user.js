@@ -14,7 +14,11 @@ var router = express.Router();
 var DB = rek('database');
 
 router.route('/api/user')
-    .post(UserCtrl.create);
+    .post(UserCtrl.create)
+    .delete(UserCtrl.delete);
+router
+router.route('/api/users/:eid')
+.get(UserCtrl.getResidents);
 
 
 
