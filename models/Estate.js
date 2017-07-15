@@ -11,7 +11,7 @@ var rekuire = require("rekuire"),
 
 
 var EstateSchema = new Schema({
-    eid: Number,
+    eid: {type:Number,required: true, unique:true},
     e_name: String,
     sub_token: String,
     contact: String,
