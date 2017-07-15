@@ -18,10 +18,10 @@ var router = express.Router();
 router.route('/api/estates')
     .post(EstateCtrl.create);
 
-/*router.get("/testing",(req,res)=>{
-    console.log(moment().format("MMMM Do YYYY, h:mm:ss a"));
+router.get("/testing",(req,res)=>{
+    /*console.log(moment().format("MMMM Do YYYY, h:mm:ss a"));*/
     res.send("post is working")
-});*/
+});
 
 
 

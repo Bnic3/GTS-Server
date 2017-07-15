@@ -8,6 +8,7 @@ var rekuire = require("rekuire"),
     Schema = mongoose.Schema;
 
 
+
 var UserSchema = new Schema({
     eid: Number,
     phone: String,
@@ -17,7 +18,8 @@ var UserSchema = new Schema({
     daily_max:{type:Number,default:20},
     verified:{type:Boolean,default: false},
     t_exp: {type:Date},
-    last_login: {type:Date,default: Date.now}
+    last_login: {type:Date,default: Date.now},
+    hash: {type: String, required: true, unique:true }
 
 });
 
