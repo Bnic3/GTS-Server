@@ -2,9 +2,11 @@
  * Created by john.nana on 7/4/2017.
  */
 
-var rekuire = require("rekuire"),
-    mongoose = rekuire("database"),
+var rek = require("rekuire"),
+    mongoose = rek("database"),
     crypto = require("crypto"),
+    axios= require("axios"),
+    User = rek("User");
 
     autoIncrement = require('mongoose-auto-increment');
     Schema = mongoose.Schema;
@@ -28,11 +30,28 @@ var EstateSchema = new Schema({
 
 });
 
+/*EstateSchema.pre("remove", (next)=>{
+    console.log("i am in pre hook")
+    var eid = this.eid;
+    var url = `/api/users/:${eid}`;
+    axios.get(url).then((residents)=>{
+        console.log("i am in axios")
+        var residents_eid = residents.map(resident=>String(resident.eid));//convert residents eid to an array of strings
+        console.log(residents_eid);
+        User.remove({eid:{$in:residents_eid}}).exec();
+    next();
+    }); //end axios
+
+});//end pre hook;*/
+
+
 EstateSchema.plugin(autoIncrement.plugin,{
     model:"Estate",
     field:'eid',
     startAt:10,
     incrementBy:1});
+
+
 
 
 
