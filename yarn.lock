@@ -230,13 +230,13 @@ css@~1.0.8:
     css-parse "1.0.4"
     css-stringify "1.0.5"
 
-debug@2.6.0:
+debug@2.6.0, debug@^2.4.5:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
   dependencies:
     ms "0.7.2"
 
-debug@2.6.8, debug@^2.2.0, debug@^2.4.5:
+debug@2.6.8, debug@^2.2.0:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
@@ -288,6 +288,10 @@ ecdsa-sig-formatter@1.0.9:
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
+
+env-test@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/env-test/-/env-test-1.0.0.tgz#8f658c1414b7eeeb6f67ed199180376c96515ca6"
 
 es6-promise@3.2.1:
   version "3.2.1"

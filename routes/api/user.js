@@ -14,6 +14,7 @@ var router = express.Router();
 var DB = rek('database');
 
 router.route('/api/user').post(UserCtrl.create);
+router.route('/api/user/:eid/:phone').get(UserCtrl.getOneResident);
 
 router.route('/api/remove-user').post(UserCtrl.delete);
 router.route('/api/update-user').post(UserCtrl.update);

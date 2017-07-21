@@ -14,6 +14,8 @@ var TokenSchema = new Schema({
     eid: Number,
     code: String,
     token: String,
+    hash: {type: String, required: true, unique:true },
+    create_date: {type:Date, default: Date.now }
 
 
 });

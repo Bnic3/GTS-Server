@@ -30,19 +30,7 @@ var EstateSchema = new Schema({
 
 });
 
-/*EstateSchema.pre("remove", (next)=>{
-    console.log("i am in pre hook")
-    var eid = this.eid;
-    var url = `/api/users/:${eid}`;
-    axios.get(url).then((residents)=>{
-        console.log("i am in axios")
-        var residents_eid = residents.map(resident=>String(resident.eid));//convert residents eid to an array of strings
-        console.log(residents_eid);
-        User.remove({eid:{$in:residents_eid}}).exec();
-    next();
-    }); //end axios
 
-});//end pre hook;*/
 
 
 EstateSchema.plugin(autoIncrement.plugin,{

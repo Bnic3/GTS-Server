@@ -8,6 +8,9 @@ var app =rek("app");
 
 var userBody={eid:1, phone: "08039704765", r_name: "Johnny"};
 var EstateBody={e_name:"My Estate", contact:"777"};
+process.env.ENV="test";
+
+/*beforeEach();*/
 
 describe("User Signup", function(){
     it(" /api/user Should allow users sign up ", function(done){
@@ -17,8 +20,15 @@ describe("User Signup", function(){
         })
 
     });
-    it("should create digital finger print for users ");
-    it("it should prevent duplicate user sign up")
+    it("should create digital finger print for users ", (done)=>{
+        var url = `/api/user/${userBody.eid}/${userBody.phone}`;
+        request(app).get(url).end((err,res)=>{
+            expect(res.body).to.have.property("hash");
+            console.log(res.body);
+            done();
+        })
+    });
+    it("it should prevent duplicate user sign up");
     it("Signed up users should have a default of 20 vistors max")
 
 

@@ -1,0 +1,3 @@
+--recursive
+--timeout 7000
+--require=env-test
