@@ -19,7 +19,7 @@ var router = express.Router();
 router.route('/api/token').post(TokenCtrl.create);
 router.route('/api/token/test').get((req,res)=>{
     res.send("Token test");
-})
+});
 
 
 /*

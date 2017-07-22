@@ -15,7 +15,7 @@ var router = express.Router();
 
 
 
-router.route('/api/estates').post(EstateCtrl.create);
+router.route('/api/estate').post(EstateCtrl.create);
 router.route('/api/remove-estate').post(EstateCtrl.delete);
 router.route('/api/update-estate').post(EstateCtrl.update);
 
