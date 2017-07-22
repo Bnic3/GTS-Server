@@ -5,7 +5,8 @@ var express = require('express');
 var rek = require("rekuire");
 
 var User = rek("User");
-var UserCtrl = rek("userCtrl")(User);
+var Estate= rek("Estate");
+var UserCtrl = rek("userCtrl")(User,Estate);
 
 
 var router = express.Router();
