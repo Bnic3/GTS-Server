@@ -13,6 +13,7 @@ Schema = mongoose.Schema;
 var TokenSchema = new Schema({
     eid: Number,
     code: String,
+    phone: String,
     jwt_token: String,
     hash: {type: String, required: true, unique:true },
     create_date: {type:Date, default: Date.now },
