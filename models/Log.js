@@ -14,6 +14,7 @@ var LogSchema = new Schema({
     eid: Number,
     host: String,
     guest: String,
+    guest_number:String,
     comment: String,
     create_date: {type:Date, default: Date.now }
 
