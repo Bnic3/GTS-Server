@@ -9,14 +9,14 @@ var rek = require("rekuire");
 
 var Token = rek("Token");
 var TokenCtrl = rek("tokenCtrl")(Token);
-
+ var middleware = rek("middleware");
 
 var router = express.Router();
 
 //DB Object
 
 
-router.route('/api/token').post(TokenCtrl.create);
+router.post('/api/token',middleware.validateSub,TokenCtrl.create);
 router.route('/api/token/validate').post(TokenCtrl.validate); //eid, code
 router.route('/api/token/test').get((req,res)=>{
     var moment = require("moment");
