@@ -23,6 +23,8 @@ router.route('/api/update-user').post(UserCtrl.update);
 
 router.route('/api/users/:eid').get(UserCtrl.getResidents);
 
+router.post('/api/user-multiple',UserCtrl.createMultiple );
+
 
 
 
