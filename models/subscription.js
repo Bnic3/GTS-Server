@@ -9,11 +9,14 @@ var rekuire = require("rekuire"),
 
 
 var SubscriptionSchema = new Schema({
-    eref: {type: Schema.Types.ObjectId, ref:'Estate' },
+    eid: String,
     amount: Number,
-    sub_date: {type:Date}
+    sub_date: {type:Date, default:Date.now},
+    type: String,
+    phone: String
 
 });
 
+/*eref: {type: Schema.Types.ObjectId, ref:'Estate' },*/
 
 module.exports = mongoose.model('Subscription', SubscriptionSchema);

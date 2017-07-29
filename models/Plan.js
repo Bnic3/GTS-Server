@@ -12,10 +12,8 @@ var rekuire = require("rekuire"),
 var PlanSchema = new Schema({
     eid: Number,
     monthly: Number,
-    quaterly: String,
-    r_name: String,
-    status: String,
-    daily_max: Number,
+    quaterly: Number,
+    annually: Number,
     last_login: {type:Date}
 
 });
