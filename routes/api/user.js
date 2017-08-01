@@ -25,6 +25,9 @@ router.route('/api/users/:eid').get(UserCtrl.getResidents);
 
 router.post('/api/user-multiple',UserCtrl.createMultiple );
 
+router.post('/api/otplogin', UserCtrl.otplogin);
+router.post('/api/otpverify', UserCtrl.otpverify);
+
 
 
 
