@@ -6,6 +6,9 @@
     "start": "node ./bin/www",
     "test": " set ENV=TEST & mocha"
   },
+  "engines":{
+    "node":"7.9.0"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "~1.13.2",
