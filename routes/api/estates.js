@@ -21,6 +21,10 @@ router.route('/api/update-estate').post(EstateCtrl.update);
 
 router.get("/testing",(req,res)=>{
     /*console.log(moment().format("MMMM Do YYYY, h:mm:ss a"));*/
+    var BaseURL ="";
+    if(process.env.ENV =="prod"){ BaseURL = process.env.BASEURL;}
+    else {  BaseURL = "http://localhost:3000"; }
+    console.log(BaseURL);
     res.send("post is working")
 });
 
