@@ -13,6 +13,10 @@ var loader = require('route-bootloader');
 
 /*var routes = require('./routes/index');
 var users = require('./routes/users');*/
+/*var estates= require("./routes/api/estates.js");
+var subscription= require("./routes/api/subscription.js");
+var token= require("./routes/api/token.js");
+var user= require("./routes/api/user.js");*/
 
 
 
