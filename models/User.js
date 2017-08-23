@@ -13,7 +13,7 @@ var UserSchema = new Schema({
     eid: Number,
     phone: String,
     token: String,
-    r_name: String,
+    r_name: {type:String,default:""},
     status: {type:String,default:"user"},
     daily_max:{type:Number,default:20},
     verified:{type:Boolean,default: false},
