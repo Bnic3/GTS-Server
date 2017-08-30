@@ -21,14 +21,15 @@ router.route('/api/token/validate').post(TokenCtrl.validate); //eid, code
 router.route('/api/token/test').get((req,res)=>{
     var moment = require("moment");
 
-    var past = "2017-07-22T07:54:12.163Z";
-    var dpast = new Date(past);
-    var mpast = moment(past).endOf("day").fromNow();
-    var mdpast = moment(dpast).fromNow();
-    console.log("dpast"+ dpast);
-    console.log("mpast"+ mpast);
-    console.log("mdpast"+ mdpast);
-    res.send("Token test");
+     var now = moment();
+    var day = moment().add(1,"days");
+    var diff = day-now;
+
+    console.log("NOW:::" +now);
+    console.log("DAY:::" +day);
+    console.log("Dif:::" +diff);
+
+
 });
 
 
