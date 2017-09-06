@@ -17,6 +17,7 @@ var EstateSchema = new Schema({
     e_name: String,
     sub_token: String,
     contact: String,
+    country: {type:String, default: "" },
     contact_email:{
         type: String,
         required: true,
