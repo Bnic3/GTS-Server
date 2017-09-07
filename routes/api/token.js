@@ -24,10 +24,12 @@ router.route('/api/token/test').get((req,res)=>{
      var now = moment();
     var day = moment().add(1,"days");
     var diff = day-now;
+    var testing = moment("2017-09-08T13:06:47.528Z");
 
     console.log("NOW:::" +now);
     console.log("DAY:::" +day);
     console.log("Dif:::" +diff);
+    console.log("test:::" +testing);
 
 
 });
