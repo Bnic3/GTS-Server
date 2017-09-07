@@ -29,7 +29,7 @@ router.route('/api/token/test').get((req,res)=>{
     console.log("NOW:::" +now);
     console.log("DAY:::" +day);
     console.log("Dif:::" +diff);
-    console.log("test:::" +testing);
+    console.log("test:::" +moment().add(24,'h'));
 
 
 });
