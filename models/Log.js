@@ -12,7 +12,7 @@ Schema = mongoose.Schema;
 
 var LogSchema = new Schema({
     eid: Number,
-    host: String,
+    hostname: String,
     guest: String,
     guest_number:String,
     comment: String,
