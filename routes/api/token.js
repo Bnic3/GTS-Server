@@ -4,6 +4,7 @@
 /**
  * Created by john.nana on 7/9/2017.
  */
+
 var express = require('express');
 var rek = require("rekuire");
 
@@ -23,7 +24,7 @@ router.route('/api/token/validate').post(TokenCtrl.validate); //eid, code
 router.route('/api/token/old').get(TokenCtrl.old);
 router.route('/api/token/email').get(TokenCtrl.emailstring);
 router.route('/api/token/nodemail').get((req, res)=>{
-    const nodemailer = require('nodemailer');
+    var nodemailer = require('nodemailer');
 
     // setup email data with unicode symbols
    /* let mailOptions = {
@@ -34,7 +35,7 @@ router.route('/api/token/nodemail').get((req, res)=>{
         html: '<b>Hello world?</b>' // html body
     };*/
 
-    let transporter = nodemailer.createTransport({
+    var transporter = nodemailer.createTransport({
         sendmail: true,
         newline: 'unix',
         path: '/usr/sbin/sendmail'
