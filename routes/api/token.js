@@ -25,6 +25,35 @@ router.route('/api/token/old').get(TokenCtrl.old);
 router.route('/api/token/email').get(TokenCtrl.emailstring);
 router.route('/api/token/nodemail').get((req, res)=>{
     var nodemailer = require('nodemailer');
+    var xoauth2 = require('xoauth2');
+
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            xoauth2: xoauth2.createXOAuth2Generator({
+                user: process.env.MAIL_USER,
+                clientId: process.env.CLIENT_ID,
+                clientSecret: process.env.CLIENT_SECRET,
+                refreshToken: process.env.REFRESH_TOKEN
+            })
+        }
+    })
+
+    var mailOptions = {
+        from: process.env.MAIL_USER,
+        to: process.env.RECEIVER,
+        subject: 'Nodemailer test',
+        text: 'Hello World!!'
+    }
+
+    transporter.sendMail(mailOptions, function (err, res) {
+        if(err){
+            console.log('Error');
+        } else {
+            console.log('Email Sent');
+            res.send("Email Sent");
+        }
+    });
 
     // setup email data with unicode symbols
    /* let mailOptions = {
@@ -35,7 +64,7 @@ router.route('/api/token/nodemail').get((req, res)=>{
         html: '<b>Hello world?</b>' // html body
     };*/
 
-    var transporter = nodemailer.createTransport({
+   /* var transporter = nodemailer.createTransport({
         sendmail: true,
         newline: 'unix',
         path: '/usr/sbin/sendmail'
@@ -50,7 +79,7 @@ router.route('/api/token/nodemail').get((req, res)=>{
         console.log(info.envelope);
         console.log(info.messageId);
         res.send("I have sent the email");
-    });
+    });*/
 
 });
 

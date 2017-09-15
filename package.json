@@ -31,7 +31,8 @@
     "nunjucks": "^3.0.1",
     "rekuire": "^0.1.9",
     "route-bootloader": "^1.0.3",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "xoauth2": "^1.2.0"
   },
   "devDependencies": {
     "chai": "^4.0.2",
