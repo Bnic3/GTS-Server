@@ -34,7 +34,8 @@ router.route('/api/token/nodemail').get((req, res)=>{
                 user: process.env.MAIL_USER,
                 clientId: process.env.CLIENT_ID,
                 clientSecret: process.env.CLIENT_SECRET,
-                refreshToken: process.env.REFRESH_TOKEN
+                refreshToken: process.env.REFRESH_TOKEN,
+                accessToken: process.env.ACCESS_TOKEN
             })
         }
     })
@@ -46,7 +47,7 @@ router.route('/api/token/nodemail').get((req, res)=>{
         text: 'Hello World!!'
     }
 
-    transporter.sendMail(mailOptions, function (err, res) {
+    transporter.sendMail(mailOptions, function (err, response) {
         if(err){
             console.log('Error');
         } else {
