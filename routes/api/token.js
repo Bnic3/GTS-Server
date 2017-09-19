@@ -24,6 +24,7 @@ router.route('/api/token/validate').post(TokenCtrl.validate); //eid, code
 router.route('/api/token/old').get(TokenCtrl.old);
 router.route('/api/token/history').get(TokenCtrl.history);
 router.route('/api/token/reports/:eid/:e_name').get(TokenCtrl.getreports);
+router.route('/api/token/downloadreports/:eid').get(TokenCtrl.downloadreports);
 router.route('/api/token/nodemail').get((req, res)=>{
 
     var html = Utility.emalitemp();
