@@ -25,8 +25,8 @@ var EstateSchema = new Schema({
         lowerCase:true,
         match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     },
-    license: {type:Number, default: 20},
-    unused_license:{type:Number, default: 20},
+    license: {type:Number, default:10},
+    unused_license:{type:Number, default: 10},
     last_sub: {type:Date, default: Date.now },
     expiration_date:{type:Date}
 
