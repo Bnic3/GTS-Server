@@ -25,7 +25,15 @@ router.route('/api/token/old').get(TokenCtrl.old);
 router.route('/api/token/history').get(TokenCtrl.history);
 router.route('/api/token/reports/:eid/:e_name').get(TokenCtrl.getreports);
 router.route('/api/token/downloadreports/:eid').get(TokenCtrl.downloadreports);
-router.route('/api/token/nodemail').get((req, res)=>{
+
+//house keeping functions
+
+router.get("/api/housekeeping/updateperdiem", TokenCtrl.updateperdiem);
+router.get("/api/housekeeping/deletetokens", TokenCtrl.deleteTokens);
+
+
+////////////////////////////
+/*router.route('/api/token/nodemail').get((req, res)=>{
 
     var html = Utility.emalitemp();
 
@@ -45,23 +53,9 @@ router.route('/api/token/nodemail').get((req, res)=>{
 
 
 
-});
-
-router.route('/api/token/test').get((req,res)=>{
-    var moment = require("moment");
-
-     var now = moment();
-    var day = moment().add(1,"days");
-    var diff = day-now;
-    var testing = moment("2017-09-08T13:06:47.528Z");
-
-    console.log("NOW:::" +now);
-    console.log("DAY:::" +day);
-    console.log("Dif:::" +diff);
-    console.log("test:::" +moment().add(24,'h'));
+});*/
 
 
-});
 
 
 /*
