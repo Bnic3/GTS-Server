@@ -477,13 +477,13 @@ debug@2.2.0, debug@~2.2.0:
   dependencies:
     ms "0.7.1"
 
-debug@2.6.0, debug@^2.4.5:
+debug@2.6.0, debug@^2.2.0, debug@^2.4.5:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
   dependencies:
     ms "0.7.2"
 
-debug@2.6.8, debug@^2.2.0:
+debug@2.6.8:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
@@ -1394,7 +1394,24 @@ mongoose-concrete-timestamps@^0.2.0:
   dependencies:
     mongoose "^4.0.1"
 
-mongoose@^4.0.1, mongoose@^4.11.1:
+mongoose@4.10.8:
+  version "4.10.8"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.10.8.tgz#31f44ed7884756f9fd9b7708ddcb3fcb4250f34e"
+  dependencies:
+    async "2.1.4"
+    bson "~1.0.4"
+    hooks-fixed "2.0.0"
+    kareem "1.4.1"
+    mongodb "2.2.27"
+    mpath "0.3.0"
+    mpromise "0.5.5"
+    mquery "2.3.1"
+    ms "2.0.0"
+    muri "1.2.1"
+    regexp-clone "0.0.1"
+    sliced "1.0.1"
+
+mongoose@^4.0.1:
   version "4.11.1"
   resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.11.1.tgz#2560b6d89e744b05857d024cab8b316066716e3e"
   dependencies:

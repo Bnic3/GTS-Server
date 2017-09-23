@@ -9,10 +9,13 @@ var DB = rek('database');
 var Subscription= rek("Subscription");
 
 var SubCtrl = rek("subCtrl")(Subscription);
+var middleware = rek("middleware");
 
 
 var router = express.Router();
 
-router.post("/api/subscribe",SubCtrl.estateSub );
+router.post("/api/subscribe",middleware.rollover,SubCtrl.estateSub );
+
+
 
 module.exports= router;
