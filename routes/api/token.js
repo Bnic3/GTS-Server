@@ -30,6 +30,7 @@ router.route('/api/token/downloadreports/:eid').get(TokenCtrl.downloadreports);
 
 router.get("/api/housekeeping/updateperdiem", TokenCtrl.updateperdiem);
 router.get("/api/housekeeping/deletetokens", TokenCtrl.deleteTokens);
+router.get("/api/housekeeping/deleteLogs", TokenCtrl.deleteLogs);
 
 
 ////////////////////////////
