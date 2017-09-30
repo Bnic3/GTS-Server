@@ -59,7 +59,8 @@ app.use(cors({origin: 'http://localhost:8000'}));
 
 loader(app);
 var rek = require("rekuire");
-/*rek("housekeeper");*/
+
+rek("housekeeper");
 
 
 
