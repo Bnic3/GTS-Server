@@ -35,7 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // use it before all route definitions
-app.use(cors({origin: 'http://localhost:8000'}));
+app.use(cors({origin: '*'}));
 
 /*app.use(function (req, res, next) {
 
