@@ -15,6 +15,7 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+
 /**
  * Create HTTP server.
  */
@@ -26,7 +27,11 @@ var server = http.createServer(app);
  */
 
 if(process.env.ENV =="prod"){ server.listen(port,`${process.env.SERVER_PUBLIC_IP}`);}
-else {  server.listen(port);}
+else {  server.listen(port);
+  setInterval(() => {
+    console.log(`You are using ${process.memoryUsage().heapUsed} of ${process.memoryUsage().heapTotal}`)
+  }, 10000);
+}
 
 /*server.listen(port);*/
 
