@@ -28,7 +28,8 @@ var EstateSchema = new Schema({
     license: {type:Number, default:10},
     unused_license:{type:Number, default: 10},
     last_sub: {type:Date, default: Date.now },
-    expiration_date:{type:Date}
+    expiration_date:{type:Date},
+    firebase_token:{type:String, default: "" }
 
 });
 
