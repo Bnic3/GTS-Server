@@ -19,6 +19,7 @@ router.route('/api/estate').post(EstateCtrl.create);
 router.route('/api/getestates').get(EstateCtrl.getEstates);
 router.route('/api/remove-estate').post(EstateCtrl.delete);
 router.route('/api/update-estate').post(EstateCtrl.update);
+router.route('/api/notification').post(EstateCtrl.sendnotification);
 
 router.get("/testing",(req,res)=>{
     /*console.log(moment().format("MMMM Do YYYY, h:mm:ss a"));*/
