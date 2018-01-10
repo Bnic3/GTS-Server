@@ -61,20 +61,10 @@ loader(app);
 var rek = require("rekuire");
 
 rek("housekeeper");
-/*var Notification = rek("fcm");
-Notification();*/ //call notification
-
 
 
 /*app.use('/', routes);
 app.use('/users', users);*/
-
-
-
-
-
-
-
 
 
 

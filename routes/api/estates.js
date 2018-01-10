@@ -8,6 +8,7 @@ var DB = rek('database');
 var Estate= rek("Estate");
 
 var EstateCtrl = rek("estateCtrl")(Estate);
+var middleware = rek("middleware");
 
 
 var router = express.Router();
@@ -19,7 +20,8 @@ router.route('/api/estate').post(EstateCtrl.create);
 router.route('/api/getestates').get(EstateCtrl.getEstates);
 router.route('/api/remove-estate').post(EstateCtrl.delete);
 router.route('/api/update-estate').post(EstateCtrl.update);
-router.route('/api/notification').post(EstateCtrl.sendnotification);
+//router.route('/api/notification').post(EstateCtrl.sendnotification);
+router.post('/api/notification',middleware.validateSub,EstateCtrl.sendnotification); //chk sub before sending messages
 
 router.get("/testing",(req,res)=>{
     /*console.log(moment().format("MMMM Do YYYY, h:mm:ss a"));*/
